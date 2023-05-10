@@ -1,0 +1,96 @@
+* {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+
+.App {
+ width: 100vw;
+ background-color: rgb(149, 229, 243);
+ text-align: center;
+}
+.title {
+ background-color: rgb(170, 179, 189);
+ padding: 20px 0 20px;
+}
+.boards {
+ display: grid;
+ align-items: start;
+ grid-template-columns: repeat(4, 1fr);
+ margin: 50px 60px 0;
+ height: 100%;
+ min-height: 100vh;
+ gap: 30px;
+}
+.board {
+ background-color: rgb(235, 239, 243);
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+ margin-bottom: 20px;
+}
+.board:first-child {
+ margin-left: 0;
+}
+.board__title {
+ font-size: 1.5rem;
+ font-weight: 700;
+ padding: 10px 0 10px;
+}
+.item {
+ width: 95%;
+ padding: 10px;
+ margin: 5px 0;
+ cursor: grab;
+ background-color: #fcfcf9;
+ text-align: start;
+ display: flex;
+ flex-direction: column;
+ border: 1px solid grey;
+}
+.item__wrap {
+ display: flex;
+ justify-content: space-between;
+}
+
+.button__add {
+ padding: 15px 0;
+ width: 100%;
+}
+.button__remove {
+ width: 15px;
+ height: 23px;
+ background: url(./images/buttonremove.svg) no-repeat center;
+ background-size: contain;
+ border: none;
+ align-self: flex-end;
+}
+.date {
+ font-size: xx-small;
+ font-weight: bold;
+ margin-top: 5px;
+}
+.task-item__text {
+ outline: none;
+ border: none;
+ width: 100%;
+ padding: 10px 5px;
+ overflow: hidden;
+ resize: none;
+
+ border-radius: 5px;
+}
+.task-item__text:focus {
+ outline: rgb(157, 157, 194) 2px solid;
+}
+@media screen and (max-width: 1370px) {
+ .boards {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: max-content;
+ }
+}
+@media screen and (max-width: 690px) {
+ .boards {
+  grid-template-columns: 1fr;
+ }
+}
